@@ -1,0 +1,15 @@
+.selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_date {
+    margin: 0 2rem;
+    text-align: center;
+    width: 250px;
+  }
+
+  &_icon {
+    cursor: pointer;
+  }
+}

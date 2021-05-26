@@ -1,0 +1,17 @@
+<div class="organizer">
+  <h2 class="organizer_title">Selected date: {{ dateServ.date | async | moment:"DD.MM.YYYY" }}</h2>
+  <form class="organizer_form" [formGroup]="form" (ngSubmit)="submit()">
+    <input class="organizer_input" type="text" formControlName="text" placeholder="Create new task...">
+    <button class="organizer_btn" type="submit" [disabled]="form.invalid">Add new task</button>
+  </form>
+  <ul class="organizer_tasks task-list" *ngIf="tasks.length; else noTasksTemplate">
+    <li class="task-list_item" *ngFor="let task of tasks; let id = index">
+      <span class="task-list_id">{{id+1}}</span>
+      <p class="task-list_text">{{task.title}}</p>
+      <button class="task-list_btn" (click)="remove(task)">Remove task</button>
+    </li>
+  </ul>
+  <ng-template #noTasksTemplate>
+    <p class="organizer_empty-text">No tasks yet</p>
+  </ng-template>
+</div>

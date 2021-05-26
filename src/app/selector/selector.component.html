@@ -1,0 +1,7 @@
+<div class="selector">
+  <i class="material-icons selector_icon" (click)="change(-1)">arrow_left</i>
+  <span class="selector_date">
+    {{date | async | moment}}
+  </span>
+  <i class="material-icons selector_icon" (click)="change(1)">arrow_right</i>
+</div>
